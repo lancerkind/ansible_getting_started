@@ -1,3 +1,14 @@
 ---
-- hosts: blogs
+-
+  hosts: blogs
+  vars:
+    message: hello
+
+  tasks:
+    -
+     name: creating file
+     shell: echo {{message}} > hello.txt
+    -
+     name: confirming it worked
+     shell: grep {{message}} hello.txt
 ...
