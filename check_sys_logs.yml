@@ -1,8 +1,9 @@
 ---
 - 
   hosts: blogs
- 
+
   tasks:
       -
+        name: Scanning Logs for error.
         shell: find /var/log -name "*.log" -type f -exec grep -i "error" {} +  | grep -v "error_log" | wc -l | grep "0" 
 ...  
